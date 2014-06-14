@@ -17,7 +17,7 @@ knit        : slidify::knit2slides
 2. Write using R Markdown
 3. Use an empty line followed by three dashes to separate slides!
 
-$$p = \frac{A}{D_0 * P_1}$$
+$$p = \frac{A}{D_0 * P_2}$$
 
 --- .class #id 
 
