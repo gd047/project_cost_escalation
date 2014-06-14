@@ -18,7 +18,7 @@ knit        : slidify::knit2slides
 3. Use an empty line followed by three dashes to separate slides!
 
 
-$$p = \frac{A}{D * P}$$
+$$p = \frac{A}{D_{11} * P_{22}}$$
 
 
 --- .class #id 
