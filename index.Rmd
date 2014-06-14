@@ -18,6 +18,7 @@ knit        : slidify::knit2slides
 3. Use an empty line followed by three dashes to separate slides!
 
 Updating gh-pages
+Ok. One more addition.
 
 $$p = \frac{A}{D_{22} * P_{33}}$$
 
