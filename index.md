@@ -16,13 +16,13 @@ logo        : kraft2.jpg
 
 The fraction of the additional project cost, per year of project duration, is given by the following formula:
   $$p = \frac{A}{T \cdot P},$$ 
-where **A** is the *additional amount* of money (mostly due to inflation), that was spent during the *total project duration* (**T**) in years, and **P** denotes the *original budgeted amount* (MEURO). 
+where **$A$** is the *additional amount* of money (mostly due to inflation), that was spent during the *total project duration* **$(T)$** in years, and **$P$** denotes the *original budgeted amount* (MEURO). 
 
 > - Rearranging terms we get: $A = p \cdot (T \cdot P).$
-> - A new composite variable (TP) can be generated, as the product of T and P.
+> - A new composite variable **$(TP)$** can be generated, as the product of $T$ and $P$.
 > - Fitting a simple linear regression model, of the form:
 $$lm(A \sim TP)$$
-can give us an estimate of the unknown parameter p.
+can give us an estimate of the unknown parameter $p$.
 
 
 <style>
