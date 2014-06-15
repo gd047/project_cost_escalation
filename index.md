@@ -6,7 +6,7 @@ job         : data products developer
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+widgets     : [mathjax, bootstrap]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 logo        : kraft2.jpg
@@ -40,20 +40,25 @@ em {
 
 A construction management company has at its disposal historical data for the variables A, D and F.
 
+Column X | Column Y
+---------|---------
+Row 1    |  Row 1
+Row 2    |  Row 2
 
 
---- 
+--- bg:#EEE
 
 ## Slide 2
 
-Finaly, a warning message appears in the screen when the given values are forcing the model to extrapolate beyond the range of the original data.
+<div class="alert alert-info">
+<p>Finaly, a warning message appears in the screen when the given values are forcing the model to extrapolate beyond the range of the original data.</p>
+</div>
 
-The following text will render correctly in this slide:
-**Bold text** <br/>
-*emphasised text* <br/>
 
---- 
+--- .cover .w #FitToWidth
 
 ## Thank You
 
  Slidify is Awesome
+ 
+<img src="assets/img/kraft3.bmp" />
