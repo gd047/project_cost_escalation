@@ -9,6 +9,7 @@ hitheme     : tomorrow      #
 widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
+logo        : kraft2.jpg
 ---
 
 ## Read-And-Delete
@@ -18,6 +19,7 @@ knit        : slidify::knit2slides
 3. Use an empty line followed by three dashes to separate slides!
 
 Updating gh-pages
+
 Ok. One more addition.
 
 $$p = \frac{A}{D_{22} * P_{33}}$$
