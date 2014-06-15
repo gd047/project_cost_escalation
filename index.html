@@ -50,12 +50,25 @@
   </hgroup>
   <article data-timings="">
     <p>The fraction of the additional project cost, per year of project duration, is given by the following formula:
-  \[p = \frac{A}{D \cdot P},\] 
-where <b>A</b> is the <b>additional amount</b> of money that was spent during the <b>total   project duration (D)</b> in years, and <b>P</b> denotes the <b>original budgeted amount</b> (MEURO). </p>
+  \[p = \frac{A}{T \cdot P},\] 
+where <strong>A</strong> is the <em>additional amount</em> of money (mostly due to inflation), that was spent during the <em>total project duration</em> (<strong>T</strong>) in years, and <strong>P</strong> denotes the <em>original budgeted amount</em> (MEURO). </p>
 
 <ul class = "build incremental">
-<li>Rearranging the terms we get: \(A = p \cdot (D \cdot P).\)</li>
+<li>Rearranging terms we get: \(A = p \cdot (T \cdot P).\)</li>
+<li>A new composite variable (TP) can be generated, as the product of T and P.</li>
+<li>Fitting a simple linear regression model, of the form:
+\[lm(A \sim TP)\]
+can give us an estimate of the unknown parameter p.</li>
 </ul>
+
+<style>
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+</style>
 
   </article>
   <!-- Presenter Notes -->
@@ -66,18 +79,22 @@ where <b>A</b> is the <b>additional amount</b> of money that was spent during th
     <h2>Slide 1</h2>
   </hgroup>
   <article data-timings="">
-    <p>A construction management company has at its disposal ηιστοριψαλ data for the variables A, D and F.</p>
+    <p>A construction management company has at its disposal historical data for the variables A, D and F.</p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="dillinger" style="background:;">
+<slide class="" id="slide-3" style="background:;">
   <hgroup>
     <h2>Slide 2</h2>
   </hgroup>
   <article data-timings="">
     <p>Finaly, a warning message appears in the screen when the given values are forcing the model to extrapolate beyond the range of the original data.</p>
+
+<p>The following text will render correctly in this slide:
+<strong>Bold text</strong> <br/>
+<em>emphasised text</em> <br/></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -85,7 +102,7 @@ where <b>A</b> is the <b>additional amount</b> of money that was spent during th
 
 <slide class="" id="slide-4" style="background:;">
   <hgroup>
-    <h2>Slide 3</h2>
+    <h2>Thank You</h2>
   </hgroup>
   <article data-timings="">
     <p>Slidify is Awesome</p>
@@ -118,7 +135,7 @@ where <b>A</b> is the <b>additional amount</b> of money that was spent during th
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Slide 3'>
+        data-slide=4 title='Thank You'>
          4
       </a>
     </li>

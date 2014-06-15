@@ -15,26 +15,45 @@ logo        : kraft2.jpg
 ## Project  cost growth 
 
 The fraction of the additional project cost, per year of project duration, is given by the following formula:
-  $$p = \frac{A}{D \cdot P},$$ 
-where <b>A</b> is the <b>additional amount</b> of money that was spent during the <b>total   project duration (D)</b> in years, and <b>P</b> denotes the <b>original budgeted amount</b> (MEURO). 
+  $$p = \frac{A}{T \cdot P},$$ 
+where **A** is the *additional amount* of money (mostly due to inflation), that was spent during the *total project duration* (**T**) in years, and **P** denotes the *original budgeted amount* (MEURO). 
 
-> - Rearranging the terms we get: $A = p \cdot (D \cdot P).$
+> - Rearranging terms we get: $A = p \cdot (T \cdot P).$
+> - A new composite variable (TP) can be generated, as the product of T and P.
+> - Fitting a simple linear regression model, of the form:
+$$lm(A \sim TP)$$
+can give us an estimate of the unknown parameter p.
 
+
+<style>
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+</style>
 
 --- 
 
 ## Slide 1
 
-A construction management company has at its disposal ηιστοριψαλ data for the variables A, D and F.
+A construction management company has at its disposal historical data for the variables A, D and F.
 
---- #dillinger
+
+
+--- 
 
 ## Slide 2
 
 Finaly, a warning message appears in the screen when the given values are forcing the model to extrapolate beyond the range of the original data.
 
+The following text will render correctly in this slide:
+**Bold text** <br/>
+*emphasised text* <br/>
+
 --- 
 
-## Slide 3
+## Thank You
 
  Slidify is Awesome
