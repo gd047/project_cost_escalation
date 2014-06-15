@@ -12,26 +12,29 @@ knit        : slidify::knit2slides
 logo        : kraft2.jpg
 ---
 
-## Read-And-Delete
+## Project  cost growth 
 
-1. Edit YAML front matter 
-2. Write using R Markdown
-3. Use an empty line followed by three dashes to separate slides!
+The fraction of the additional project cost, per year of project duration, is given by the following formula:
+  $$p = \frac{A}{D \cdot P},$$ 
+where <b>A</b> is the <b>additional amount</b> of money that was spent during the <b>total   project duration (D)</b> in years, and <b>P</b> denotes the <b>original budgeted amount</b> (MEURO). 
 
-Updating gh-pages
-
-Ok. One more addition.
-
-$$p = \frac{A}{D_{22} * P_{33}}$$
+> - Rearranging the terms we get: $A = p \cdot (D \cdot P).$
 
 
---- .class #id 
+--- 
 
 ## Slide 1
 
-Animated list (right arrow to continue)
+A construction management company has at its disposal ηιστοριψαλ data for the variables A, D and F.
 
-> 1. this is the first item
-> 2. this is the second item
+--- #dillinger
 
----
+## Slide 2
+
+Finaly, a warning message appears in the screen when the given values are forcing the model to extrapolate beyond the range of the original data.
+
+--- 
+
+## Slide 3
+
+ Slidify is Awesome
