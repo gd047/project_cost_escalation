@@ -81,6 +81,7 @@ This is to test if the tab template works correctly
 
 For a project with initial duration of 36 months with an original budgeted amount of 100,000 k€, give an estimate for the increase of the additional project cost that will be caused by the approval of a 6 months time overrun, if the original budgeted amount remains the same.
 
+
 *** {id: answer}
 
 870,000 €
