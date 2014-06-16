@@ -52,7 +52,7 @@ $$\hat{A} = \begin{cases}
   1.52 + 1.75\% \cdot T_{years} \cdot P_{MEURO} & \text{for $T_{years} \cdot P_{MEURO} > 130.12$}
 \end{cases}$$
 > - On the sidebar panel, users can input values for the predictor variables, (total project duration, **T** and original budgeted amount, **P**), and obtain predictions for the additional project cost (**A**) on the **Results** tabPanel. The fitted value is shown both on the scatterplot's $y$ axis and in a table at the bottom of the screen.  
-> - Additionaly, there is a <code>list input control</code> on the sidebar, where users can select the confidence level of the generated prediction, among the values 80%, 90% and 95%. Accordingly, a prediction interval is indicated on the scatterplot, along with the fitted value. The <strong><em>Upper</em></strong> and <strong><em>Lower</em></strong> confidence limits appear also in the table at the bottom. 
+> - Additionaly, there is a <code>list input control</code> on the sidebar, where users can select the confidence level of the generated prediction, among the values 80%, 90% and 95%. Accordingly, a prediction interval is indicated on the scatterplot, along with the fitted value. The <strong><em>Upper</em></strong> and <strong><em>Lower</em></strong> confidence limits also appear in the table at the bottom. 
 
 <span class="footnote">^* The $\LaTeX$ formula contains embedded R code that gets run when slidifying the document</span>
 
@@ -79,7 +79,7 @@ This is to test if the tab template works correctly
 
 *** {class: active, id: question}
 
-For a project with initial duration 36 months, give an estimate for the increase of the additional project cost that will be caused by the approval of a 6 months time overrun, if the original budgeted amount remains the same.
+For a project with initial duration of 36 months with an original budgeted amount of 100,000 k€, give an estimate for the increase of the additional project cost that will be caused by the approval of a 6 months time overrun, if the original budgeted amount remains the same.
 
 *** {id: answer}
 
