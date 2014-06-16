@@ -12,11 +12,27 @@ knit        : slidify::knit2slides
 logo        : kraft2.jpg
 ---
 
-## Project  cost growth 
+## Project  cost growth
+<style>
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+.description {
+  color: #345962;
+  background:#EEE;
+  font-weight:bold;
+}
+.footnote { 
+font-size: smaller; margin-left: 2em; 
+}
+</style>
 
 The fraction of the additional project cost, per year of project duration, is given by the following formula:
   $$p = \frac{A}{T \cdot P},$$ 
-where **$A$** is the <span style="color:#345962;background:#EEE;font-weight:bold;">additional amount of money</span> (mostly due to inflation), that was spent during the <span style="color:#345962;background:#EEE;font-weight:bold;">total project duration</span> **$(T)$** in years, and **$P$** denotes the <span style="color:#345962;background:#EEE;font-weight:bold;">original budgeted amount</span> (MEURO). 
+where **$A$** is the <span class="description">additional amount of money</span> (mostly due to inflation), that was spent during the <span class="description">total project duration</span> **$(T)$** in years, and **$P$** denotes the <span class="description">original budgeted amount</span> (MEURO). 
 
 > - Rearranging terms we get: $A = p \cdot (T \cdot P).$
 > - A new composite variable **$(TP)$** can be generated, as the product of $T$ and $P$.
@@ -25,26 +41,24 @@ $$lm(A \sim TP)$$
 can give us an estimate of the unknown parameter $p$.
 
 
-<style>
-strong {
-  font-weight: bold;
-}
-em {
-  font-style: italic;
-}
-</style>
-
 --- 
 
 ## A Shiny app to estimate the additional project cost
 
-- A construction management company has at its disposal historical data for the variables **A**, **T** and **P**. The [Shiny application](http://hwhd.shinyapps.io/pr_cost_esc) that has been created, fits a segmented simple linear regression model (without intercept) to that data. The resulting model has the following form:
+- A construction management company has at its disposal historical data for the variables **A**, **T** and **P**. The [Shiny application](http://hwhd.shinyapps.io/pr_cost_esc) that has been created, fits a <span class="description">segmented simple linear regression model</span> (without intercept) to that data. The resulting model has the following form:
+
+
+
+
+
+$$\hat{Y}= 0.0292 + \left(-0.0117 \right) \cdot ΜΗΚΟΣ, *$$
 
 
 > - On the sidebar panel, users can input values for the predictor variables, (total project duration, **T** and original budgeted amount, **P**), and obtain predictions for the additional project cost (**A**) on the **Results** tabPanel. The fitted value is shown both on the statterplot y axis and in a table on the bottom of the screen.   
 
-> - Additionaly, there is a list input control on the sidebar, where users can select the confidence level of the generated prediction among the values 80%, 90% and 95%. Accordingly, a prediction interval is indicated, along with the fitted value on the scatterplot.
+> - Additionaly, there is a list input control on the sidebar, where users can select the confidence level of the generated prediction, among the values 80%, 90% and 95%. Accordingly, a prediction interval is indicated, along with the fitted value on the scatterplot. The Upper and Lower confidence limits appear also in the table at the bottom. 
 
+<span class="footnote">^* contains embedded R code that gets run when slidifying the document</span>
 
 --- bg:#EEE
 
@@ -66,11 +80,4 @@ em {
     <img height='20' src='assets/img/kraft3.bmp' />
 </div>
 
---- &interactive
-## Interactive Console
 
-``{r opts.label = 'interactive', results = 'asis'}
-require(googleVis)
-M1 <- gvisMotionChart(Fruits, idvar = 'Fruit', timevar = 'Year')
-print(M1, tag = 'chart')
-```
