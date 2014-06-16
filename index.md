@@ -6,7 +6,7 @@ job         : data products developer
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : [mathjax, bootstrap]            # {mathjax, quiz, bootstrap}
+widgets     : [mathjax, bootstrap, shiny, interactive]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 logo        : kraft2.jpg
@@ -16,7 +16,7 @@ logo        : kraft2.jpg
 
 The fraction of the additional project cost, per year of project duration, is given by the following formula:
   $$p = \frac{A}{T \cdot P},$$ 
-where **$A$** is the *additional amount* of money (mostly due to inflation), that was spent during the *total project duration* **$(T)$** in years, and **$P$** denotes the *original budgeted amount* (MEURO). 
+where **$A$** is the <span style="color:#345962;background:#EEE;font-weight:bold;">additional amount of money</span> (mostly due to inflation), that was spent during the <span style="color:#345962;background:#EEE;font-weight:bold;">total project duration</span> **$(T)$** in years, and **$P$** denotes the <span style="color:#345962;background:#EEE;font-weight:bold;">original budgeted amount</span> (MEURO). 
 
 > - Rearranging terms we get: $A = p \cdot (T \cdot P).$
 > - A new composite variable **$(TP)$** can be generated, as the product of $T$ and $P$.
@@ -36,14 +36,14 @@ em {
 
 --- 
 
-## Slide 1
+## A Shiny app to estimate the additional project cost
 
-A construction management company has at its disposal historical data for the variables A, D and F.
+- A construction management company has at its disposal historical data for the variables **A**, **T** and **P**. The [Shiny application](http://hwhd.shinyapps.io/pr_cost_esc) that has been created, fits a segmented simple linear regression model (without intercept) to that data. The resulting model has the following form:
 
-Column X | Column Y
----------|---------
-Row 1    |  Row 1
-Row 2    |  Row 2
+
+> - On the sidebar panel, users can input values for the predictor variables, (total project duration, **T** and original budgeted amount, **P**), and obtain predictions for the additional project cost (**A**) on the **Results** tabPanel. The fitted value is shown both on the statterplot y axis and in a table on the bottom of the screen.   
+
+> - Additionaly, there is a list input control on the sidebar, where users can select the confidence level of the generated prediction among the values 80%, 90% and 95%. Accordingly, a prediction interval is indicated, along with the fitted value on the scatterplot.
 
 
 --- bg:#EEE
@@ -55,12 +55,22 @@ Row 2    |  Row 2
 </div>
 
 
---- .cover .w #FitToWidth
+
+---
 
 ## Thank You
 
  Slidify is Awesome
 <br><br><br><br><br><br>
 <div style='text-align: right;'>
-    <img height='50' src='assets/img/kraft3.bmp' />
+    <img height='20' src='assets/img/kraft3.bmp' />
 </div>
+
+--- &interactive
+## Interactive Console
+
+``{r opts.label = 'interactive', results = 'asis'}
+require(googleVis)
+M1 <- gvisMotionChart(Fruits, idvar = 'Fruit', timevar = 'Year')
+print(M1, tag = 'chart')
+```
