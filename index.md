@@ -70,34 +70,28 @@ In case the fitted value lies beyond the plot area, the scatterplot's axes limit
 The application contains two additional tabs:
 
 > - Diagnostics: A summary of the fitted model as well as a plot of it, are displayed here. The percentage of additional project cost relative to the original budgeted amounnt, per year of project duration, can be inferred by the information given in this tab.
-> - Documentation: This final tab contains a brief description of the application, information about the author and references to publications or products that has been used during the implementation.  
+> - Documentation: This final tab contains a brief description of the application, information about the author and references to publications or products that have been used during the implementation.  
 
-
-
-
----
-
-## Thank You
-
- Slidify is Awesome
-<br><br><br><br><br><br>
-<div style='text-align: right;'>
-    <img height='20' src='assets/img/kraft3.bmp' />
-</div>
 
 --- {class: class, tpl: tabs}
 
 This is to test if the tab template works correctly
 
-*** {class: active, id: problem}
+*** {class: active, id: question}
 
-Tab1
+For a project with initial duration 36 months, give an estimate for the increase of the additional project cost that will be caused by the approval of a 6 months time overrun, if the original budgeted amount remains the same.
 
-*** {id: questions}
+*** {id: answer}
 
-Tab2
+870,000 €
 
-*** {id: variables}
+*** {id: finally}
+## Thank You
 
-Tab3
+<br><br><br><br><br><br><br> 
+<div style='text-align: right;'>
+    Slidify is Awesome <br><br>
+    <img src='assets/img/kraft3.bmp' />
+</div>
+
 
