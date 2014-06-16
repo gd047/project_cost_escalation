@@ -60,5 +60,7 @@ Row 2    |  Row 2
 ## Thank You
 
  Slidify is Awesome
- 
-<img src="assets/img/kraft3.bmp" />
+<br><br><br><br><br><br>
+<div style='text-align: right;'>
+    <img height='50' src='assets/img/kraft3.bmp' />
+</div>
