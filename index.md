@@ -63,8 +63,12 @@ $$\hat{A} = \begin{cases}
 ## Slide 2
 
 <div class="alert alert-info">
-<p>Finaly, a warning message appears in the screen when the given values are forcing the model to extrapolate beyond the range of the original data.</p>
+<p>A warning message appears on the screen, when the given values are forcing the model to extrapolate beyond the range of the original data.</p>
 </div>
+
+The application contains two additional tabs with
+
+> - The model summary and its plot
 
 
 
