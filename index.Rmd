@@ -99,4 +99,16 @@ For a project with initial duration of 36 months with an original budgeted amoun
     <img src='assets/img/kraft3.bmp' />
 </div>
 
+<!-- 
+---  
 
+## A Simple Plot ##
+
+Let us create a simple scatterplot.
+
+```{r simple-plot, fig.height = 5, fig.align = 'center', message = F}
+require(ggplot2)
+qplot(wt, mpg, data = mtcars)
+```
+
+-->
