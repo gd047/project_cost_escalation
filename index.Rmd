@@ -117,7 +117,49 @@ For a project with initial duration of 36 months with an original budgeted amoun
 ```{r results="asis", echo=FALSE}
 
 
-M <- gvisMotionChart(Fruits, "Fruit", "Year", options = list(width = 500, height = 350))
+crs.odbc <- odbcConnect("PIND_ERGOSE", uid="sa", pwd="ssasgd!")
+
+my.data <- sqlQuery(crs.odbc, paste("exec pr_tseries_cash_flow_per_year @dataYear = 2014",sep=""),stringsAsFactors =F)
+my.data$trans_date <- as.Date(paste(my.data$trans_date,"/01",sep=""))
+
+totals.per.dieyth <- ddply(my.data,.(dieyth,graph,trans_date,type),function(x) sum(x$sum_month_poso))
+totals.per.dieyth[6] <- totals.per.dieyth[1]
+names(totals.per.dieyth)[6] <- "dieyth"
+totals.per.dieyth[totals.per.dieyth$dieyth=='de1' & totals.per.dieyth$graph=='actual',1] <- '.Δ.Ε.1_act'
+totals.per.dieyth[totals.per.dieyth$dieyth=='de1' & totals.per.dieyth$graph=='baseline',1] <- '.Δ.Ε.1_base'
+totals.per.dieyth[totals.per.dieyth$dieyth=='de1' & totals.per.dieyth$graph=='update',1] <- '.Δ.Ε.1_upd'
+totals.per.dieyth[totals.per.dieyth$dieyth=='de2' & totals.per.dieyth$graph=='actual',1] <- '.Δ.Ε.2_act'
+totals.per.dieyth[totals.per.dieyth$dieyth=='de2' & totals.per.dieyth$graph=='baseline',1] <- '.Δ.Ε.2_base'
+totals.per.dieyth[totals.per.dieyth$dieyth=='de2' & totals.per.dieyth$graph=='update',1] <- '.Δ.Ε.2_upd'
+
+names(totals.per.dieyth)[1] <- "symv_no"
+names(totals.per.dieyth)[5] <- "sum_month_poso"
+
+
+totals <- ddply(totals.per.dieyth,.(graph,trans_date,type),function(x) sum(x$sum_month_poso))
+totals$symv_no <- " TOTAL"
+totals[totals$graph=='actual',"symv_no"] <- '.TOTAL_act'
+totals[totals$graph=='baseline',"symv_no"] <- '.TOTAL_base'
+totals[totals$graph=='update',"symv_no"] <- '.TOTAL_upd'
+names(totals)[4] <- "sum_month_poso"
+
+
+my.data2 <- rbind(my.data[,c(1,2,3,5,6)],totals.per.dieyth[,c(1,3,5,4,2)],totals[,c(5,2,4,3,1)])
+
+temp.data <- ddply(my.data2,.(symv_no),transform, cum_amount = cumsum(sum_month_poso))
+odbcClose(crs.odbc)
+
+final.data <- data.frame(symv=temp.data$symv_no,
+                         pist_date=temp.data$trans_date,
+                         "Χρηματοροές"=round(temp.data$sum_month_poso,0),
+                         "Αθρ.Χρηματοροές"=round(temp.data$cum_amount,0),
+                         "Γράφημα"=temp.data$type,
+                         stringsAsFactors=F)
+
+M <- gvisMotionChart(final.data, idvar="symv", timevar="pist_date", options=list(displayAnnotations=F,
+          state='{"iconKeySettings":[{"key":{"dim0":".TOTAL_act"}},{"key":{"dim0":".TOTAL_base"}},{"key":{"dim0":".TOTAL_upd"}}],"iconType":"LINE","colorOption":"4","nonSelectedAlpha":0};',
+     legendPosition='newRow',width=1126*.814, height=675*.814, showChartButtons=T))
+
 print(M, "chart")
 ```
 
