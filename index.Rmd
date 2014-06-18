@@ -117,7 +117,7 @@ For a project with initial duration of 36 months with an original budgeted amoun
 ```{r results="asis", echo=FALSE}
 
 
-crs.odbc <- odbcConnect("PIND_******", uid="sa", pwd="******")
+crs.odbc <- odbcConnect("PIND_*******", uid="sa", pwd="******")
 
 my.data <- sqlQuery(crs.odbc, paste("exec pr_tseries_cash_flow_per_year @dataYear = 2014",sep=""),stringsAsFactors =F)
 my.data$trans_date <- as.Date(paste(my.data$trans_date,"/01",sep=""))
