@@ -99,7 +99,7 @@ For a project with initial duration of 36 months with an original budgeted amoun
     <img src='assets/img/kraft3.bmp' />
 </div>
 
-
+<!--
 --- &interactive
 
 ## Motion chart example
@@ -110,3 +110,4 @@ M1 <- plot(gvisMotionChart(Fruits, "Fruit", "Year"))
 print(M1, tag='chart')
 ```
 
+-->
