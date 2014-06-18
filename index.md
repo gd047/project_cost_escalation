@@ -95,19 +95,24 @@ For a project with initial duration of 36 months with an original budgeted amoun
     <img src='assets/img/kraft3.bmp' />
 </div>
 
-<!-- 
----  
 
-## A Simple Plot ##
+--- &interactive
 
-Let us create a simple scatterplot.
+## Motion chart example
 
 
 ```r
-require(ggplot2)
-qplot(wt, mpg, data = mtcars)
+suppressPackageStartupMessages(library(googleVis))
+M1 <- plot(gvisMotionChart(Fruits, "Fruit", "Year"))
 ```
 
-<img src="figure/simple-plot.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto;" />
+```
+## starting httpd help server ... done
+```
 
--->
+```r
+print(M1, tag='chart')
+```
+
+[1] "C:\\DOCUME~1\\gidontas\\LOCALS~1\\Temp\\RtmpW8G9Rr/MotionChartID260300965fa.html"
+

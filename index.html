@@ -16,6 +16,7 @@
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
 <link rel=stylesheet href="libraries/widgets/interactive/css/aceeditor.css"></link>
 <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+<link rel=stylesheet href="./assets/css/slidify.css"></link>
 
   
   <!-- Grab CDN jQuery, fall back to local if offline -->
@@ -159,27 +160,62 @@ can give us an estimate of the unknown parameter \(p\).</li>
     <img src='assets/img/kraft3.bmp' />
 </div>
 
-<!-- 
----  
-
-## A Simple Plot ##
-
-Let us create a simple scatterplot.
-
-
-```r
-require(ggplot2)
-qplot(wt, mpg, data = mtcars)
-```
-
-<img src="figure/simple-plot.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto;" />
-
--->
-
     </div>
   </div>
 </div>
 
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Motion chart example</h2>
+  </hgroup>
+  <article data-timings="">
+     
+<div class='row-fluid'>
+  <div class='span5'>
+    <form id="knitForm5" data-cell="5">
+      <pre><code class="r">suppressPackageStartupMessages(library(googleVis))
+M1 &lt;- plot(gvisMotionChart(Fruits, &quot;Fruit&quot;, &quot;Year&quot;))
+</code></pre>
+
+<pre><code>## starting httpd help server ... done
+</code></pre>
+
+<pre><code class="r">print(M1, tag=&#39;chart&#39;)
+</code></pre>
+
+<p>[1] &quot;C:\DOCUME~1\gidontas\LOCALS~1\Temp\RtmpW8G9Rr/MotionChartID260300965fa.html&quot;</p>
+
+      <div id='aceeditor5' style="height:px;"></div>
+      <div class='interactive btn-toolbar pull-left'>
+        <div class='btn-group'>
+          <a class='btn btn-small action-button' id='runCode5' data-action='runCode'
+            data-cell='5' rel='tooltip' data-title='Run Code'>
+            <i class='icon-play'></i>
+          </a>
+          <a class='btn btn-small iBtn' id='testCode5' data-action='testCode'
+             data-cell='5' rel='tooltip' data-title='Test Code'>
+            <i class='icon-check'></i>
+          </a>
+          <a class='btn btn-small iBtn' id='clearResult5' data-action='clearResult'
+             data-cell='5' rel='tooltip' data-title='Clear Output'>
+            <i class="icon-remove"></i>
+          </a>
+          <a class='btn  btn-small iBtn' id='getHint5' rel='tooltip' 
+            data-title="Get Hint" data-action='getHint'
+            data-cell='5' data-hint="">
+            <i class="icon-bookmark"></i>
+          </a>
+        </div>
+      </div>    </form>
+  </div>
+  <div class='span7'>
+    <div id="knitResult5" class='shiny-html-output'></div>
+  </div>
+</div>
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -210,6 +246,12 @@ qplot(wt, mpg, data = mtcars)
       <a href="#" target="_self" rel='tooltip' 
         data-slide=4 title=''>
          4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Motion chart example'>
+         5
       </a>
     </li>
   </ul>
