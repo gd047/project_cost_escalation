@@ -6,7 +6,7 @@ job         : data products developer
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : [mathjax, bootstrap, shiny, interactive]  # {mathjax, quiz, bootstrap}
+widgets     : [mathjax, bootstrap]  # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 logo        : kraft2.jpg
@@ -29,6 +29,9 @@ em {
 font-size: smaller; margin-left: 2em; 
 }
 </style>
+
+
+
 
 The fraction of the additional project cost, per year of project duration, is given by the following formula:
   $$p = \frac{A}{T \cdot P},$$ 
@@ -79,12 +82,12 @@ This is to test if the tab template works correctly
 
 *** {class: active, id: question}
 
-For a project with initial duration of 36 months with an original budgeted amount of 100,000 k€, give an estimate for the increase of the additional project cost that will be caused by the approval of a 6 months time overrun, if the original budgeted amount remains the same.
+For a project with initial duration of 36 months with an original budgeted amount of 100,000 k?, give an estimate for the increase of the additional project cost that will be caused by the approval of a 6 months time overrun, if the original budgeted amount remains the same.
 
 
 *** {id: answer}
 
-870,000 €
+870,000 ?
 
 *** {id: finally}
 ## Thank You
@@ -95,25 +98,179 @@ For a project with initial duration of 36 months with an original budgeted amoun
     <img src='assets/img/kraft3.bmp' />
 </div>
 
-<!--
---- &interactive
 
-## Motion chart example
+--- 
+
+## googleVis
+
+<!-- MotionChart generated in R 3.1.0 by googleVis 0.5.2 package -->
+<!-- Wed Jun 18 16:58:41 2014 -->
 
 
-```r
-suppressPackageStartupMessages(library(googleVis))
-M1 <- plot(gvisMotionChart(Fruits, "Fruit", "Year"))
-```
+<!-- jsHeader -->
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataMotionChartID1946ed73bee () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ "Apples",
+2008,
+"West",
+98,
+78,
+20,
+"2008-12-31" 
+],
+[
+ "Apples",
+2009,
+"West",
+111,
+79,
+32,
+"2009-12-31" 
+],
+[
+ "Apples",
+2010,
+"West",
+89,
+76,
+13,
+"2010-12-31" 
+],
+[
+ "Oranges",
+2008,
+"East",
+96,
+81,
+15,
+"2008-12-31" 
+],
+[
+ "Bananas",
+2008,
+"East",
+85,
+76,
+9,
+"2008-12-31" 
+],
+[
+ "Oranges",
+2009,
+"East",
+93,
+80,
+13,
+"2009-12-31" 
+],
+[
+ "Bananas",
+2009,
+"East",
+94,
+78,
+16,
+"2009-12-31" 
+],
+[
+ "Oranges",
+2010,
+"East",
+98,
+91,
+7,
+"2010-12-31" 
+],
+[
+ "Bananas",
+2010,
+"East",
+81,
+71,
+10,
+"2010-12-31" 
+] 
+];
+data.addColumn('string','Fruit');
+data.addColumn('number','Year');
+data.addColumn('string','Location');
+data.addColumn('number','Sales');
+data.addColumn('number','Expenses');
+data.addColumn('number','Profit');
+data.addColumn('string','Date');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartMotionChartID1946ed73bee() {
+var data = gvisDataMotionChartID1946ed73bee();
+var options = {};
+options["width"] =    500;
+options["height"] =    350;
 
-```
-## starting httpd help server ... done
-```
+    var chart = new google.visualization.MotionChart(
+    document.getElementById('MotionChartID1946ed73bee')
+    );
+    chart.draw(data,options);
+    
 
-```r
-print(M1, tag='chart')
-```
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "motionchart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartMotionChartID1946ed73bee);
+})();
+function displayChartMotionChartID1946ed73bee() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+<!-- jsChart -->  
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMotionChartID1946ed73bee"></script>
+ 
+<!-- divChart -->
+  
+<div id="MotionChartID1946ed73bee"
+  style="width: 500px; height: 350px;">
+</div>
 
-[1] "C:\\DOCUME~1\\gidontas\\LOCALS~1\\Temp\\RtmpaWq878/MotionChartID23028fe6c8f.html"
-
--->

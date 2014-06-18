@@ -6,7 +6,7 @@ job         : data products developer
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
-widgets     : [mathjax, bootstrap, shiny, interactive]  # {mathjax, quiz, bootstrap}
+widgets     : [mathjax, bootstrap]  # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 logo        : kraft2.jpg
@@ -29,6 +29,16 @@ em {
 font-size: smaller; margin-left: 2em; 
 }
 </style>
+
+```{r setup, include=FALSE}
+# set global chunk options
+opts_chunk$set(cache=FALSE)
+opts_knit$set(message=FALSE)
+options(gvis.plot.tag="chart")
+packs <- c("slidify", "slidifyLibraries", "knitr", "googleVis", "plyr", "RODBC")
+lapply(packs, library, character.only = TRUE)
+```
+
 
 The fraction of the additional project cost, per year of project duration, is given by the following formula:
   $$p = \frac{A}{T \cdot P},$$ 
@@ -83,12 +93,12 @@ This is to test if the tab template works correctly
 
 *** {class: active, id: question}
 
-For a project with initial duration of 36 months with an original budgeted amount of 100,000 k€, give an estimate for the increase of the additional project cost that will be caused by the approval of a 6 months time overrun, if the original budgeted amount remains the same.
+For a project with initial duration of 36 months with an original budgeted amount of 100,000 k?, give an estimate for the increase of the additional project cost that will be caused by the approval of a 6 months time overrun, if the original budgeted amount remains the same.
 
 
 *** {id: answer}
 
-870,000 €
+870,000 ?
 
 *** {id: finally}
 ## Thank You
@@ -99,15 +109,15 @@ For a project with initial duration of 36 months with an original budgeted amoun
     <img src='assets/img/kraft3.bmp' />
 </div>
 
-<!--
---- &interactive
 
-## Motion chart example
+--- 
 
-```{r opts.label = 'interactive', results='asis'}
-suppressPackageStartupMessages(library(googleVis))
-M1 <- plot(gvisMotionChart(Fruits, "Fruit", "Year"))
-print(M1, tag='chart')
+## googleVis
+
+```{r results="asis", echo=FALSE}
+
+
+M <- gvisMotionChart(Fruits, "Fruit", "Year", options = list(width = 500, height = 350))
+print(M, "chart")
 ```
 
--->
