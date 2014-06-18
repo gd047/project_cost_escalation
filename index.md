@@ -100,19 +100,7 @@ For a project with initial duration of 36 months with an original budgeted amoun
 
 ## Motion chart example
 
-
-```r
-suppressPackageStartupMessages(library(googleVis))
+<textarea class='interactive' id='interactive{{slide.num}}' data-cell='{{slide.num}}' data-results='asis' style='display:none'>suppressPackageStartupMessages(library(googleVis))
 M1 <- plot(gvisMotionChart(Fruits, "Fruit", "Year"))
-```
-
-```
-## starting httpd help server ... done
-```
-
-```r
-print(M1, tag='chart')
-```
-
-[1] "C:\\DOCUME~1\\gidontas\\LOCALS~1\\Temp\\RtmpW8G9Rr/MotionChartID260300965fa.html"
+print(M1, tag='chart')</textarea>
 
