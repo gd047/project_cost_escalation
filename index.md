@@ -103,15 +103,29 @@ For a project with initial duration of 36 months with an original budgeted amoun
 
 ## googleVis
 
+
+```
+## Warning: [RODBC] ERROR: state IM002, code 0, message [Microsoft][ODBC Driver Manager] Data source name not found and no default driver specified
+## Warning: ODBC connection failed
+```
+
+```
+## Error: first argument is not an open RODBC channel
+```
+
+```
+## Error: argument is not an open RODBC channel
+```
+
 <!-- MotionChart generated in R 3.1.0 by googleVis 0.5.2 package -->
-<!-- Wed Jun 18 17:37:02 2014 -->
+<!-- Wed Jun 18 17:39:37 2014 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataMotionChartID1943c417518 () {
+function gvisDataMotionChartID19410e2790f () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -3416,8 +3430,8 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartMotionChartID1943c417518() {
-var data = gvisDataMotionChartID1943c417518();
+function drawChartMotionChartID19410e2790f() {
+var data = gvisDataMotionChartID19410e2790f();
 var options = {};
 options["width"] = 916.56;
 options["height"] = 549.45;
@@ -3427,7 +3441,7 @@ options["legendPosition"] = "newRow";
 options["showChartButtons"] = true;
 
     var chart = new google.visualization.MotionChart(
-    document.getElementById('MotionChartID1943c417518')
+    document.getElementById('MotionChartID19410e2790f')
     );
     chart.draw(data,options);
     
@@ -3451,9 +3465,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMotionChartID1943c417518);
+callbacks.push(drawChartMotionChartID19410e2790f);
 })();
-function displayChartMotionChartID1943c417518() {
+function displayChartMotionChartID19410e2790f() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -3477,11 +3491,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMotionChartID1943c417518"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMotionChartID19410e2790f"></script>
  
 <!-- divChart -->
   
-<div id="MotionChartID1943c417518"
+<div id="MotionChartID19410e2790f"
   style="width: 916.564px; height: 549.45px;">
 </div>
 
