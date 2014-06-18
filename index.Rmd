@@ -117,7 +117,7 @@ For a project with initial duration of 36 months with an original budgeted amoun
 ```{r results="asis", echo=FALSE}
 
 
-crs.odbc <- odbcConnect("PIND_ERGOSE", uid="sa", pwd="******")
+crs.odbc <- odbcConnect("PIND_*******", uid="sa", pwd="*******")
 
 my.data <- sqlQuery(crs.odbc, paste("exec pr_tseries_cash_flow_per_year @dataYear = 2014",sep=""),stringsAsFactors =F)
 my.data$trans_date <- as.Date(paste(my.data$trans_date,"/01",sep=""))
@@ -125,12 +125,12 @@ my.data$trans_date <- as.Date(paste(my.data$trans_date,"/01",sep=""))
 totals.per.dieyth <- ddply(my.data,.(dieyth,graph,trans_date,type),function(x) sum(x$sum_month_poso))
 totals.per.dieyth[6] <- totals.per.dieyth[1]
 names(totals.per.dieyth)[6] <- "dieyth"
-totals.per.dieyth[totals.per.dieyth$dieyth=='de1' & totals.per.dieyth$graph=='actual',1] <- '.Ä.Å.1_act'
-totals.per.dieyth[totals.per.dieyth$dieyth=='de1' & totals.per.dieyth$graph=='baseline',1] <- '.Ä.Å.1_base'
-totals.per.dieyth[totals.per.dieyth$dieyth=='de1' & totals.per.dieyth$graph=='update',1] <- '.Ä.Å.1_upd'
-totals.per.dieyth[totals.per.dieyth$dieyth=='de2' & totals.per.dieyth$graph=='actual',1] <- '.Ä.Å.2_act'
-totals.per.dieyth[totals.per.dieyth$dieyth=='de2' & totals.per.dieyth$graph=='baseline',1] <- '.Ä.Å.2_base'
-totals.per.dieyth[totals.per.dieyth$dieyth=='de2' & totals.per.dieyth$graph=='update',1] <- '.Ä.Å.2_upd'
+totals.per.dieyth[totals.per.dieyth$dieyth=='de1' & totals.per.dieyth$graph=='actual',1] <- '.Î”.Î•.1_act'
+totals.per.dieyth[totals.per.dieyth$dieyth=='de1' & totals.per.dieyth$graph=='baseline',1] <- '.Î”.Î•.1_base'
+totals.per.dieyth[totals.per.dieyth$dieyth=='de1' & totals.per.dieyth$graph=='update',1] <- '.Î”.Î•.1_upd'
+totals.per.dieyth[totals.per.dieyth$dieyth=='de2' & totals.per.dieyth$graph=='actual',1] <- '.Î”.Î•.2_act'
+totals.per.dieyth[totals.per.dieyth$dieyth=='de2' & totals.per.dieyth$graph=='baseline',1] <- '.Î”.Î•.2_base'
+totals.per.dieyth[totals.per.dieyth$dieyth=='de2' & totals.per.dieyth$graph=='update',1] <- '.Î”.Î•.2_upd'
 
 names(totals.per.dieyth)[1] <- "symv_no"
 names(totals.per.dieyth)[5] <- "sum_month_poso"
@@ -151,9 +151,9 @@ odbcClose(crs.odbc)
 
 final.data <- data.frame(symv=temp.data$symv_no,
                          pist_date=temp.data$trans_date,
-                         "×ñçìáôïñïÝò"=round(temp.data$sum_month_poso,0),
-                         "Áèñ.×ñçìáôïñïÝò"=round(temp.data$cum_amount,0),
-                         "ÃñÜöçìá"=temp.data$type,
+                         "Î§ÏÎ·Î¼Î±Ï„Î¿ÏÎ¿Î­Ï‚"=round(temp.data$sum_month_poso,0),
+                         "Î‘Î¸Ï.Î§ÏÎ·Î¼Î±Ï„Î¿ÏÎ¿Î­Ï‚"=round(temp.data$cum_amount,0),
+                         "Î“ÏÎ¬Ï†Î·Î¼Î±"=temp.data$type,
                          stringsAsFactors=F)
 
 M <- gvisMotionChart(final.data, idvar="symv", timevar="pist_date", options=list(displayAnnotations=F,
