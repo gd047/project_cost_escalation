@@ -1,0 +1,11 @@
+.title-slide {
+  background-color: #8CBCC0; /* #EDE0CF; ; #CA9F9D #CBE7A5*/
+  /* background-image:url(http://goo.gl/EpXln); */
+}
+
+.title-slide hgroup > h1, 
+.title-slide hgroup > h2 {
+  color: #345962 ;  /* ; #EF5150 #535E43 */
+}
+
+
