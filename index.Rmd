@@ -94,12 +94,12 @@ This is to test if the tab template works correctly
 
 *** {class: active, id: question}
 
-For a project with initial duration of 36 months with an original budgeted amount of 100,000 k?, give an estimate for the increase of the additional project cost that will be caused by the approval of a 6 months time overrun, if the original budgeted amount remains the same.
+For a project with initial duration of 36 months with an original budgeted amount of 100,000 k€, give an estimate for the increase of the additional project cost that will be caused by the approval of a 6 months time overrun, if the original budgeted amount remains the same.
 
 
 *** {id: answer}
 
-870,000 ?
+870,000 €
 
 *** {id: finally}
 ## Thank You
@@ -110,7 +110,7 @@ For a project with initial duration of 36 months with an original budgeted amoun
     <img src='assets/img/kraft3.bmp' />
 </div>
 
-
+<!--
 --- 
 
 ## googleVis
@@ -118,7 +118,7 @@ For a project with initial duration of 36 months with an original budgeted amoun
 ```{r results="asis", echo=FALSE}
 
 
-crs.odbc <- odbcConnect("PIND_******", uid="sa", pwd="******")
+crs.odbc <- odbcConnect("PIND_******", uid="sa", pwd="*******")
 
 my.data <- sqlQuery(crs.odbc, paste("exec pr_tseries_cash_flow_per_year @dataYear = 2014",sep=""),stringsAsFactors =F)
 my.data$trans_date <- as.Date(paste(my.data$trans_date,"/01",sep=""))
@@ -163,4 +163,4 @@ M <- gvisMotionChart(final.data, idvar="symv", timevar="pist_date", options=list
 
 print(M, "chart")
 ```
-
+-->
